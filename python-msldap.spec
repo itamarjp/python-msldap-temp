@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.2.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Python library to play with MS LDAP
 
 License:        MIT
@@ -45,6 +45,9 @@ sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 %{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info
 
 %changelog
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.2.5-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Thu Jan 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.5-2
 - Fix requirement (rhbz#1790355)
 
