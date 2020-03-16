@@ -1,8 +1,8 @@
 %global pypi_name msldap
 
 Name:           python-%{pypi_name}
-Version:        0.2.5
-Release:        2%{?dist}
+Version:        0.2.10
+Release:        1%{?dist}
 Summary:        Python library to play with MS LDAP
 
 License:        MIT
@@ -42,9 +42,15 @@ sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 %license LICENSE
 %{_bindir}/msldap
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info
+%{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info/
 
 %changelog
+* Mon Mar 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.10-1
+- Update to latest upstream release 0.2.10
+
+* Tue Mar 03 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.7-1
+- Update to latest upstream release 0.2.7
+
 * Thu Jan 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.5-2
 - Fix requirement (rhbz#1790355)
 
