@@ -8,7 +8,6 @@ Summary:        Python library to play with MS LDAP
 License:        MIT
 URL:            https://github.com/skelsec/msldap
 Source0:        %{pypi_source}
-Source1:        https://raw.githubusercontent.com/skelsec/msldap/master/LICENSE
 BuildArch:      noarch
 
 %description
@@ -27,7 +26,6 @@ Python library to play with MS LDAP.
 %prep
 %autosetup -n %{pypi_name}-%{version}
 rm -rf %{pypi_name}.egg-info
-cp -a %{SOURCE1} LICENSE
 sed -i -e '/^#!\//, 1d' %{pypi_name}/{*.py,*/*.py,*/*/*.py}
 sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 
@@ -46,7 +44,8 @@ sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 
 %changelog
 * Mon Mar 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.10-1
-- Update to latest upstream release 0.2.10
+- LICENSE file is no in the source tarball
+- Update to latest upstream release 0.2.10 (rhbz#1815002)
 
 * Tue Mar 03 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.7-1
 - Update to latest upstream release 0.2.7
