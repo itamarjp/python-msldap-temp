@@ -50,6 +50,9 @@ sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 * Tue Mar 03 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.7-1
 - Update to latest upstream release 0.2.7
 
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.2.5-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Thu Jan 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.5-2
 - Fix requirement (rhbz#1790355)
 
