@@ -1,7 +1,7 @@
 %global pypi_name msldap
 
 Name:           python-%{pypi_name}
-Version:        0.2.10
+Version:        0.2.11
 Release:        1%{?dist}
 Summary:        Python library to play with MS LDAP
 
@@ -43,6 +43,9 @@ sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 %{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info/
 
 %changelog
+* Mon Apr 06 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.11-1
+- Update to latest upstream release 0.2.11 (rhbz#1815002)
+
 * Mon Mar 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.10-1
 - LICENSE file is no in the source tarball
 - Update to latest upstream release 0.2.10 (rhbz#1815002)
