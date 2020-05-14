@@ -2,13 +2,14 @@
 
 Name:           python-%{pypi_name}
 Version:        0.2.14
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Python library to play with MS LDAP
 
 License:        MIT
 URL:            https://github.com/skelsec/msldap
 Source0:        %{pypi_source}
 BuildArch:      noarch
+Patch0:         prompt-toolkit_support_a_recent_version.patch
 
 %description
 Python library to play with MS LDAP.
@@ -24,7 +25,7 @@ BuildRequires:  python3-setuptools
 Python library to play with MS LDAP.
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+%autosetup -n %{pypi_name}-%{version} -p 2
 rm -rf %{pypi_name}.egg-info
 sed -i -e '/^#!\//, 1d' %{pypi_name}/{*.py,*/*.py,*/*/*.py}
 sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
@@ -43,6 +44,9 @@ sed -i -e 's/ldap3<2.5.2/ldap3/g' setup.py
 %{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info/
 
 %changelog
+* Thu May 14 2020 Itamar Reis Peixoto <itamar@ispbrasil.com.br> - 0.2.14-2
+- include a patch to work with newer prompt_toolkit
+
 * Tue Apr 21 2020 Fabian Affolter <mail@fabian-affolter.ch> - 0.2.14-1
 - Update to latest upstream release 0.2.14 (rhbz#1825710)
 
